@@ -23,3 +23,4 @@ main = do
     print total
     print mean
     print range
+    print range
