@@ -64,3 +64,7 @@ myMap func list =
 -- Implementation of head function
 myHead :: [a] -> a
 myHead (beg : end) = beg
+
+
+
+

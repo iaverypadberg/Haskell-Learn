@@ -63,3 +63,21 @@ getPerimeter a b c =  calcPerimeter a b c
     where 
         calcPerimeter :: Int -> Int -> Int -> Int
         calcPerimeter a b c = a + b + c
+
+-- Full function application
+compareWithHundred :: (Num a, Ord a) => a -> Ordering  
+compareWithHundred x = compare 100 x 
+
+-- Partial function application
+compareWithHundred' :: (Num a, Ord a) => a -> Ordering  
+compareWithHundred' = compare 100
+
+-- Partial finction application
+myMax :: (Num a, Ord a) => a -> a
+myMax = max 10
+
+
+-- Elem implemented with a lambda expression and a foldl
+elem' :: (Eq a) => a -> [a] -> Bool  
+elem' y ys = foldl (\acc x -> if x == y then True else acc) False ys
+
