@@ -1,4 +1,7 @@
+
+module Fun (testWhere) where
 import Data.Char
+import GHC.Integer
 
 removeNonUpper :: String -> String
 removeNonUpper xs = [ c | c <- xs, c `elem`['A'..'Z']]
@@ -81,3 +84,17 @@ myMax = max 10
 elem' :: (Eq a) => a -> [a] -> Bool  
 elem' y ys = foldl (\acc x -> if x == y then True else acc) False ys
 
+
+testWhere :: Integer -> String
+testWhere a = 
+    case a of
+        2 | 2 > 1, let c = 40 -> "Your number is " ++ show c
+        a      -> hello a
+
+    where 
+        hello::Integer -> String
+        hello a = "Your number is not 2, it is " ++ show a
+
+
+divide :: Integer -> Integer -> Integer
+divide a b = divInteger a b
